@@ -1,0 +1,64 @@
+{
+  "name": "SafetyApp",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "react-native start",
+    "android": "react-native run-android",
+    "android-log": "react-native log-android",
+    "ios": "react-native run-ios",
+    "ios-log": "react-native log-ios",
+    "adb-reverse": "adb reverse tcp:8081 tcp:8081",
+    "react-devtool": "react-devtools",
+    "redux-devtool": "remotedev",
+    "android-linux": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && react-native run-android"
+  },
+  "dependencies": {
+    "base-64": "^0.1.0",
+    "color": "1.0.3",
+    "lodash": "4.17.10",
+    "moment": "2.13.0",
+    "native-base": "^2.11.0",
+    "prop-types": "^15.6.2",
+    "react": "16.6.3",
+    "react-native": "^0.58.4",
+    "react-native-root-toast": "^3.0.2",
+    "react-navigation": "1.5.0",
+    "react-redux": "^6.0.0",
+    "react-timer-mixin": "^0.13.4",
+    "redux": "^4.0.1",
+    "redux-form": "^8.1.0",
+    "redux-logger": "^3.0.6",
+    "redux-mock-store": "^1.5.3",
+    "redux-persist": "^5.10.0",
+    "redux-thunk": "^2.3.0",
+    "remote-redux-devtools": "^0.5.16",
+    "styled-components": "^3.4.5",
+    "react-native-webview": "^5.2.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "7.2.3",
+    "eslint": "4.4.1",
+    "eslint-plugin-flowtype": "2.35.0",
+    "eslint-plugin-import": "2.7.0",
+    "eslint-plugin-jsx-a11y": "6.0.2",
+    "eslint-plugin-prettier": "2.1.2",
+    "eslint-plugin-react": "7.1.0",
+    "eslint-plugin-react-native": "3.0.1",
+    "flow-bin": "0.78.0",
+    "flow-typed": "2.5.1",
+    "husky": "0.14.3",
+    "jest": "23.3.0",
+    "prettier": "1.5.3",
+    "react-test-renderer": "16.6.3",
+    "reactotron-react-native": "^2.1.5",
+    "react-devtools": "^3.6.0",
+    "remotedev-server": "^0.3.1"
+  },
+  "jest": {
+    "preset": "react-native",
+    "transformIgnorePatterns": [
+      "node_modules/(?!(react-native|lottie-react-native|expo|react-native-maps|react-native-svg|react-native-branch|native-base-shoutem-theme|react-native-easy-grid|react-native-drawer|react-native-vector-icons|react-native-keyboard-aware-scroll-view|react-native-swiper|react-navigation|native-base|@expo|react-native-scrollable-tab-view|react-native-simple-modal|react-native-iphone-x-helper)/)"
+    ]
+  }
+}
