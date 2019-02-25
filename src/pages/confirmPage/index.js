@@ -41,7 +41,7 @@ class ConfirmPage extends Component {
 
   render() {
     return (
-      <Container style={styles.container}>
+      <Container>
         <Header>
           <Left>
             <Button
@@ -98,15 +98,15 @@ class ConfirmPage extends Component {
               </View>
             </View>
             <View style={{flex: 1, flexDirection: 'row', justifyContent: 'center',}}>
-              <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate("WebRoute",{url:"http://www.coeltx.net/",name:"EAGLE LAKE TEXAS"})} >
+              <TouchableOpacity activeOpacity={0.6} style={global.button} onPress={() => this.props.navigation.navigate("WebRoute",{url:"http://www.coeltx.net/",name:"EAGLE LAKE TEXAS"})} >
                 <Image style={{height: 200, flex: 1}} resizeMode="contain"
                        source={require('../../../assets/ui/R4.png')}/>
               </TouchableOpacity>
             </View>
-            <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-around', margin: 20}}>
-              <Button info large bordered onPress={() => this.props.navigation.navigate("Report")}
-                      style={{backgroundColor: '#43ACDE', borderRadius: 10, borderColor: '#4e4e4e', width: 210}}>
-                <Text style={{color: '#000000'}}> Submit </Text></Button>
+            <View style={{flex: 1, flexDirection: 'row', justifyContent: 'center',}}>
+              <TouchableOpacity activeOpacity={0.7} style={global.button} onPress={() => this.props.navigation.navigate("Report")} >
+                <Image style={{width: 180, flex: 1}} resizeMode="contain" source={require('../../../assets/ui/btn/submit.png')}/>
+              </TouchableOpacity>
             </View>
           </Content>
         </ImageBackground>

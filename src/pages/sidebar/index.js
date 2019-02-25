@@ -60,7 +60,7 @@ const datas = [
     url: "https://www.reasaintl.com/"
   },
   {
-    name: "Bargain Barn",
+    name: "Barter Barn",
     route: "WebRoute",
     key: "WebRoute4",
     icon: "web",

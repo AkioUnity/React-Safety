@@ -14,7 +14,7 @@ import {
   Textarea, FooterTab, Footer
 } from "native-base";
 import styles from "./styles";
-import {FlatList, ImageBackground, View} from "react-native";
+import {FlatList, Image, ImageBackground, TouchableOpacity, View} from "react-native";
 import global from "../../global/styles";
 
 const datas = [
@@ -39,7 +39,7 @@ const datas = [
 class ReportHome extends Component {
   render() {
     return (
-      <Container style={styles.container}>
+      <Container>
         <Header>
           <Left>
             <Button
@@ -78,8 +78,9 @@ class ReportHome extends Component {
             }
             />
             <View style={{flex: 1, flexDirection: 'row', justifyContent: 'center', margin: 20}}>
-              <Button info large onPress={() => this.props.navigation.navigate("ConfirmRoute")}><Text
-                style={{color: '#000000'}}> Submit Report</Text></Button>
+              <TouchableOpacity activeOpacity={0.5} style={global.button} onPress={() => this.props.navigation.navigate("ConfirmRoute")} >
+                <Image style={{width: 170, flex: 1}} resizeMode="contain" source={require('../../../assets/ui/btn/submitReport.png')}/>
+              </TouchableOpacity>
             </View>
             <View style={{flex: 1, flexDirection: 'row',}}>
               <Icon name="medical" style={styles.iconSize}/>

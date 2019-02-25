@@ -15,7 +15,7 @@ import {
 } from "native-base";
 import styles from "./styles";
 import global from "../../global/styles";
-import {Image, ImageBackground, View} from "react-native";
+import {Image, ImageBackground, TouchableOpacity, View} from "react-native";
 
 const starImage = require("../../../assets/ui/texas.png");
 
@@ -49,11 +49,12 @@ class Home extends Component {
                 <Image square style={styles.starImage} resizeMode="contain" source={starImage}/>
               </View>
               <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between'}}>
-                <Button info large onPress={() => this.props.navigation.navigate("ReportRoute")}><Text
-                    style={{color: '#000000'}}> Report </Text></Button>
-                <Button info large
-                        onPress={() => this.props.navigation.navigate("Login")}><Text
-                    style={{color: '#000000'}}> Login </Text></Button>
+                <TouchableOpacity activeOpacity={0.5} style={global.button} onPress={() => this.props.navigation.navigate("ReportRoute")} >
+                  <Image style={{width: 170, flex: 1}} resizeMode="contain" source={require('../../../assets/ui/btn/reportBtn.png')}/>
+                </TouchableOpacity>
+                <TouchableOpacity activeOpacity={0.5} style={global.button} onPress={() => this.props.navigation.navigate("Login")} >
+                  <Image style={{width: 170, flex: 1}} resizeMode="contain" source={require('../../../assets/ui/btn/loginBtn.png')}/>
+                </TouchableOpacity>
               </View>
             </Content>
           </ImageBackground>

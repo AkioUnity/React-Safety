@@ -39,7 +39,10 @@ const styles = StyleSheet.create({
     padding: 15,
     height: 50,
     width: 50
-  }
+  },
+  button: {
+    alignItems: 'center'
+  },
 });
 
 export default styles;
