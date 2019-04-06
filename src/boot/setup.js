@@ -9,7 +9,7 @@ import variables from "../theme/variables/platform";
 
 export interface Props {}
 export interface State {
-  store0: Object,
+  store: Object,
   isLoading: boolean,
 }
 

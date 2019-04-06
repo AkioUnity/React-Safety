@@ -11,20 +11,49 @@ import {
   Right,
   Body,
   CheckBox, ListItem,
-  Input, FooterTab, Footer
+  Input, FooterTab, Footer, Toast
 } from "native-base";
 import styles from "./styles";
-import {Image, ImageBackground, View, TouchableHighlight,TouchableOpacity} from "react-native";
+import {Image, ImageBackground, View, TouchableOpacity} from "react-native";
 import global from "../../global/styles";
+import {bindActionCreators} from "redux";
+import * as Actions from "../../actions/user";
+import {connect} from "react-redux";
 
 
 class ConfirmPage extends Component {
+
   constructor(props) {
     super(props);
+    this.props.fetchIsLoading(true);
     this.state = {
       checkbox1: true,
-      checkbox2: true
+      checkbox2: true,
+      report_id:this.props.report_id,
+      showToast: false
     };
+  }
+
+  componentDidUpdate(){
+    if (!this.props.isLoading) {
+      this.OnReportSuccess()
+    }
+  }
+
+  OnBtnReport(){
+    this.props.reportUser(this.state);
+  }
+
+  OnReportSuccess(){
+    this.props.fetchIsLoading(true);
+    console.log('show toast Successfully');
+    Toast.show({
+      text: "Successfully Reported!",
+      buttonText: "Okay",
+      type: "success",
+      duration: 5000
+    });
+    // this.props.navigation.navigate("ConfirmRoute");
   }
 
   toggleSwitch1() {
@@ -86,15 +115,15 @@ class ConfirmPage extends Component {
             <View style={styles.form}>
               <View style={styles.inputLine}>
                 <Text style={{fontSize: 20}}>Name:</Text>
-                <Input style={styles.input}/>
+                <Input style={styles.input} onChangeText={(text) => {this.setState({username:text}); }}/>
               </View>
               <View style={styles.inputLine}>
-                <Text style={{fontSize: 20}}>Email: </Text>
-                <Input style={styles.input}/>
+                <Text style={{fontSize: 20}} >Email: </Text>
+                <Input style={styles.input} onChangeText={(text) => {this.setState({email:text}); }}/>
               </View>
               <View style={styles.inputLine}>
-                <Text style={{fontSize: 20}}>Mobile#: </Text>
-                <Input style={styles.input}/>
+                <Text style={{fontSize: 20}} >Mobile#: </Text>
+                <Input style={styles.input} onChangeText={(text) => {this.setState({phone:text}); }}/>
               </View>
             </View>
             <View style={{flex: 1, flexDirection: 'row', justifyContent: 'center',}}>
@@ -104,7 +133,7 @@ class ConfirmPage extends Component {
               </TouchableOpacity>
             </View>
             <View style={{flex: 1, flexDirection: 'row', justifyContent: 'center',}}>
-              <TouchableOpacity activeOpacity={0.7} style={global.button} onPress={() => this.props.navigation.navigate("Report")} >
+              <TouchableOpacity activeOpacity={0.7} style={global.button} onPress={() => this.OnBtnReport()} >
                 <Image style={{width: 180, flex: 1}} resizeMode="contain" source={require('../../../assets/ui/btn/submit.png')}/>
               </TouchableOpacity>
             </View>
@@ -122,4 +151,16 @@ class ConfirmPage extends Component {
   }
 }
 
-export default ConfirmPage;
+function matchDispatchToProps(dispatch) {
+  return bindActionCreators({reportUser:Actions.reportUser,fetchIsLoading:Actions.fetchIsLoading}, dispatch);
+}
+
+const mapStateToProps = (state) => {
+  return {
+    isLoading: state.user.isLoading,
+    lastError: state.user.lastError,
+    report_id: state.user.report_id
+  };
+};
+
+export default connect(mapStateToProps, matchDispatchToProps)(ConfirmPage);

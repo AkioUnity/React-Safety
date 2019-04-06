@@ -43,7 +43,6 @@ class LoginForm extends React.Component<Props, State> {
 
 
 	componentDidUpdate(){
-		console.log('LoginContainer componentDidUpdate');
 		//logout
 		if (this.props.resetNavigation){
 			this.props.resetNavigation();
@@ -61,7 +60,6 @@ class LoginForm extends React.Component<Props, State> {
 
 	renderInput({input, label, type, meta: {touched, error, warning}}) {
 		const isLoading = this.props.isLoading;
-		console.log('LoginContainer renderInput isLoading:'+isLoading);
 		const { handleSubmit } = this.props;
 		return (
 			<Item stackedLabel error={error && touched} disabled={isLoading}>
@@ -90,7 +88,6 @@ class LoginForm extends React.Component<Props, State> {
 	};
 
 	loginSuccess(){
-		console.log('loginSuccess');
 		this.props.navigation.navigate("HomeRoute");
 	}
 
@@ -120,7 +117,6 @@ class LoginForm extends React.Component<Props, State> {
 	}
 	render() {
 		const { handleSubmit } = this.props;
-		console.log('render');
 		const form = (
 			<Form>
 				<Field name="email" component={this.renderInput} validate={[required]} />
@@ -148,7 +144,6 @@ function matchDispatchToProps(dispatch) {
 }
 //This function, simply takes your reducer data, that is required, and converts it into a usable Prop.
 const mapStateToProps = (state) => {
-	console.log('mapStateToPro');
 	console.log(state);
 	return {
 	data: state.loginReducer.userData,

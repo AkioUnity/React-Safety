@@ -12,9 +12,7 @@ export default {
     reduxLogging: __DEV__,
     includeExamples: __DEV__,
     useReactotron: __DEV__,
-    BASE_URL : Platform.select({
-      ios: "https://devauth.safety.com/api/",
-      android: "https://devauth.safety.com/api"
-    }) ,
+    // BASE_URL : "http://192.168.1.53/ci-safety/api",
+    BASE_URL : "http://ec2-18-222-196-29.us-east-2.compute.amazonaws.com/api",
     ROUTE_LOGIN : "/authentication/login",
   };
