@@ -9,7 +9,7 @@ import SideBar from "./pages/sidebar";
 import WebView from "./pages/webpage";
 import ReportForm from "./pages/reportHome";
 import ConfirmPage from "./pages/confirmPage";
-
+import SignUpPage from "./pages/signup";
 
 const Drawer = DrawerNavigator(
   {
@@ -35,6 +35,7 @@ const AppNavigator = StackNavigator(
     Login: { screen: Login },
     BlankPage: { screen: BlankPage },
     HomeRoute: { screen: Drawer },
+    SignUpRoute: { screen: SignUpPage },
     // AccordionIconStyle: { screen: AccordionIconStyle },
     // AccordionHeaderContentStyle: { screen: AccordionHeaderContentStyle },
     // AccordionCustomHeaderContent: { screen: AccordionCustomHeaderContent }

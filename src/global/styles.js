@@ -31,7 +31,12 @@ const styles = StyleSheet.create({
     flex:1
   },
   watermarkOpacity: {
-    backgroundColor: 'rgba(255,255,255,0.7)'
+    backgroundColor: '#B0DAE6'
+  },
+  backBtn:{
+    width: 25,
+    height:25,
+    margin: 15
   },
   image: {
     flex: 1,

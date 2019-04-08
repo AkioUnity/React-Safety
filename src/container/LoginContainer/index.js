@@ -9,6 +9,7 @@ import {connect} from "react-redux";
 import Login from "../../pages/login";
 import * as Actions from "./actions";
 import Toast from "react-native-root-toast";
+import styles from "../../pages/login/styles";
 
 const required = value => (value ? undefined : "Required");
 const maxLength = max => value => (value && value.length > max ? `Must be ${max} characters or less` : undefined);
@@ -62,8 +63,8 @@ class LoginForm extends React.Component<Props, State> {
 		const isLoading = this.props.isLoading;
 		const { handleSubmit } = this.props;
 		return (
-			<Item stackedLabel error={error && touched} disabled={isLoading}>
-				<Label>{input.name === "email" ? "EMAIL ADDRESS" : "PASSWORD"}</Label>
+			<Item inlineLabel error={error && touched} disabled={isLoading} style={styles.inputRadius}>
+				<Label>{input.name === "email" ? "email address" : "password"}</Label>
 				{/*<Icon active name={input.name === "email" ? "person" : "unlock"} />*/}
 				<Input
 					// style={{color: isLoading ? "white" : "black"} }

@@ -1,8 +1,7 @@
 import { Dimensions, StyleSheet } from "react-native";
 
-const h = Dimensions.get("window").height;
-const w = Dimensions.get("window").width;
-const width=w*0.8;
+const deviceHeight = Dimensions.get("window").height;
+const width=350;
 const styles: any = StyleSheet.create({
   container: {
     position: "absolute",
@@ -12,43 +11,50 @@ const styles: any = StyleSheet.create({
     right: 0,
     backgroundColor: "#FBFAFA",
   },
+  label:{
+    color: '#000'
+  },
+  input:{
+    color: '#564240',
+    borderBottomColor:'#564240'
+  },
   whiteCircle:{
     backgroundColor: '#fff',
-    width:h*0.1,
-    height:h*0.1,
-    borderRadius: h*0.1*0.5,
-    margin:h*0.03,
+    width:110,
+    height:110,
+    borderRadius: 55,
+    margin:30,
   },
   inputRadius:{
     backgroundColor: '#fff',
     width:width,
     height:45,
     borderRadius: 21,
-    marginBottom:h*0.02,
+    marginBottom:20,
     marginLeft:0,
-    padding:h*0.02,
+    padding:20,
     fontSize: 12
   },
   logoImage:{
-    width: h*0.1*0.5,
-    height:h*0.1*0.5,
-    margin:h*0.1*0.5*0.5
+    width: 65,
+    height:65,
+    margin:22
   },
   loginRadius:{
     backgroundColor: '#173885',
     width:width,
     height:40,
     borderRadius: 20,
-    margin:h*0.03,
+    margin:30,
   },
   loginText:{
-    fontSize: 17, color: '#000',
-    marginBottom:h*0.05
+    fontSize: 22, color: '#000',
+    marginBottom:50
   },
   loginImage:{
     width: 150,
-    height:h*0.05,
-    marginBottom:h*0.02
+    height:55,
+    marginBottom:20
   },
   shadow: {
     flex: 1,
@@ -58,9 +64,10 @@ const styles: any = StyleSheet.create({
   facebookRadius:{
     backgroundColor: '#F58320',
     width:width,
-    height:40,
-    borderRadius: 20,
-    marginBottom:h*0.04
+    height:50,
+    borderRadius: 25,
+    marginBottom:30,
+    alignSelf:'center'
   },
 });
 export default styles;

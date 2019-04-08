@@ -1,5 +1,6 @@
 import * as React from "react";
 import {Image} from "react-native";
+import global from "../../global/styles";
 import {
   Container,
   Content,
@@ -14,7 +15,7 @@ import {
   Spinner, FooterTab
 } from "native-base";
 
-import styles from "../../global/styles";
+import styles from "./styles";
 
 export interface Props {
   loginForm: any;
@@ -37,28 +38,39 @@ class Login extends React.Component<Props, State> {
     console.log('Login render isLoading:'+isLoading);
     return (
       <Container>
-        <Header style={styles.loginHeader}>
-          <Body style={styles.alignCenter}>
-          {/*<Icon name="md-aperture" style={{fontSize: 104, color: "#40717e"}}/>*/}
-          <Title style={styles.black}>Safety in Numbers </Title>
-          </Body>
-        </Header>
-        <Content>
-          {this.props.loginForm}
-          {
-            isLoading ?
+        <Content padder style={global.watermarkOpacity}>
+          <Button transparent onPress={() => this.props.navigation.navigate("DrawerOpen")} >
+            <Icon name="menu"/>
+          </Button>
+          <View style={{alignItems: 'center'}}>
+            <View style={styles.whiteCircle}>
+              <Image square style={styles.logoImage} resizeMode="contain" source={require("../../../assets/images/logo0.png")}/>
+            </View>
+            <Text style={styles.loginText}>Log in</Text>
+            {this.props.loginForm}
+            {
+              isLoading ?
               (<Spinner color="blue"/>)
               :
               (
-                <View padder>
-                  {/*<Button bordered style={{ position: "absolute",top:10,right:0 }} onPress={() => this.props.navigation.navigate("WebRoute")}>*/}
-                    {/*<Text>Lost your password?</Text>*/}
-                  {/*</Button>*/}
-                  <Button full onPress={this.props.onSubmit} style={{right:0,left:0,marginTop:60}}>
-                    <Text>{"Login"}</Text>
+                <View>
+                  <Button full onPress={this.props.onSubmit} style={styles.loginRadius}>
+                    <Text style={{fontSize:12}}>log in</Text>
                   </Button>
                 </View>
               )}
+            <Image square style={styles.loginImage} resizeMode="contain" source={require("../../../assets/images/login00.png")}/>
+            <View>
+            <Button full style={styles.facebookRadius} onPress={() => this.props.navigation.navigate("WebRoute")}>
+              <Text style={{fontSize:12}}>CONTINUE WITH FACEBOOK</Text>
+            </Button>
+            </View>
+            <View>
+              <Button transparent onPress={() => this.props.navigation.navigate("SignUpRoute")}>
+                <Text style={{fontSize:14}}>CREATE ACCOUNT</Text>
+              </Button>
+            </View>
+          </View>
         </Content>
         <Footer>
           <FooterTab>
