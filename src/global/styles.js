@@ -3,12 +3,24 @@ const h=Dimensions.get('window').height;
 const w=Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#B0DAE6"
+  },
   loginHeader: {
     height: 100,
     backgroundColor: "#ECECEC"
   },
+  centerTitle: {
+    alignSelf:'center',
+    textAlign:'center',
+    color:'#fff',
+  },
+  headerBackIcon: {
+    width: 20,
+    height:20
+  },
   reportHeader: {
-    height: h*0.18,
+    height: h*0.16,
     backgroundColor: "#21428B",
     paddingBottom: h*0.08
   },
@@ -55,6 +67,33 @@ const styles = StyleSheet.create({
   button: {
     alignItems: 'center'
   },
+
+  //step
+  step: {
+    top:-h*0.027,
+    alignItems:'center',
+    marginBottom: -18,
+  },
+  stepCircle: {
+    marginHorizontal:w*0.05,
+    width:w*0.09,
+    height:w*0.09,
+    borderRadius:w*0.045,
+    backgroundColor:'#ED882B'
+  },
+  stepText: {
+    fontSize: w*0.045,
+    color:'#fff',
+    textAlign: 'center',
+    padding:w*0.012
+  },
+  sendBtn: {
+    width:w*0.28,
+    height:w*0.08,
+    borderRadius:w*0.04,
+    backgroundColor:'#ED882B'
+  },
+
 });
 
 export default styles;

@@ -3,6 +3,7 @@ const h=Dimensions.get('window').height;
 const w=Dimensions.get('window').width;
 
 export default {
+  w:w,
   container: {
     backgroundColor: "#B0DAE6"
   },
@@ -56,52 +57,27 @@ export default {
     fontSize: 22,
     width:350
   },
-  textArea: {
-    fontSize: w*0.03,
-    width:w*0.91,
+  area: {
+    width:w*0.88,
+    height:w*0.15,
     backgroundColor: 'white',
-    margin:w*0.02,
-    marginVertical:h*0.004,
-    borderRadius:12,
+    margin:w*0.04,
+    marginVertical:h*0.015,
+    borderRadius:16,
+    flex: 1, flexDirection: 'row', alignItems: 'stretch',
   },
-  iconSize:{
-    fontSize:12,
-    color: "red"
+  area0: {
+    width:w*0.88,
+    height:w*0.15,
+    borderRadius:16,
   },
-  bottom:{
-    margin:w*0.005,
-    // backgroundColor:'#d79a96',
-    flexDirection: 'row',
-    alignItems:'flex-end',
-    alignContent:'space-around'
-
+  textArea: {
+    fontSize: w*0.05,
+    width:w*0.7,
+    height:w*0.15,
+    backgroundColor: 'white',
+    left:-w*0.033 ,
+    color:'#636363',
+    padding:w*0.04,
   },
-  bottom1: {
-    // alignItems:'center',
-    width:w*0.65,
-    marginBottom: 10,
-  },
-  emergency:{
-    width:w*0.26,
-    height:w*0.13,
-    backgroundColor:'#DED9D9',
-    alignItems:'center',
-    justifyContent:'center',
-
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
-    shadowOpacity: 0.30,
-    shadowRadius: 4.65,
-
-    elevation: 8,
-  },
-  priorityText: {
-    fontSize: w*0.03,
-    color:'#000',
-    padding:w*0.02
-  },
-
 };

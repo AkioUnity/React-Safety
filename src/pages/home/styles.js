@@ -18,11 +18,13 @@ export default {
     top:-h*0.03,
     zIndex:2,
   },
-  topRec:{backgroundColor: '#F58322', borderRadius: 12,flexDirection: 'row', justifyContent: 'space-between',
-  width:'100%',
+  topRec:{
+    backgroundColor: '#F58322', borderRadius: 12,flexDirection: 'row', justifyContent: 'space-between',
+    width:'100%',
     marginTop:h*0.01
   },
-  whiteRec:{backgroundColor: '#fff', borderRadius: 15,
+  whiteRec:{
+    backgroundColor: '#fff', borderRadius: 15,
     flexDirection: 'row', justifyContent: 'space-between',
     // marginBottom:h*0.020,
     width:'100%',

@@ -14,12 +14,13 @@ import {
   Input, FooterTab, Footer, Toast
 } from "native-base";
 import styles from "./styles";
-import {Image, ImageBackground, View, TouchableOpacity} from "react-native";
+import {Image, ImageBackground, View, TouchableOpacity, FlatList} from "react-native";
 import global from "../../global/styles";
 import {bindActionCreators} from "redux";
 import * as Actions from "../../actions/user";
 import {connect} from "react-redux";
 
+const step = [ 1,2,3,4];
 
 class ConfirmPage extends Component {
 
@@ -70,68 +71,79 @@ class ConfirmPage extends Component {
 
   render() {
     return (
-      <Container>
-        <Header>
+      <Container style={global.container}>
+        <Header style={global.reportHeader}>
           <Left>
             <Button
               transparent
               onPress={() => this.props.navigation.navigate("DrawerOpen")}
             >
-
               <Icon name="menu"/>
             </Button>
           </Left>
           <Body>
-          <Title style={{color: '#000000',}}>Safety In Numbers</Title>
-          <Text>Voluntary Reporter</Text>
+          <Title style={global.centerTitle}>Submit</Title>
           </Body>
-          <Right/>
+          <Right>
+            <Button transparent onPress={() => this.props.navigation.navigate("ReportRoute")}>
+              <Image style={global.headerBackIcon} resizeMode="contain" source={require("../../../assets/images/back_arrow.png")}/>
+            </Button>
+          </Right>
         </Header>
-          <Content padder style={global.watermarkOpacity}>
-            <View>
-              <ListItem button onPress={() => this.toggleSwitch1()}>
-                <Body>
-                <Text style={{fontSize: 20}}>Save report details to phone</Text>
-                </Body>
-                <CheckBox
-                  checked={this.state.checkbox1}
-                  onPress={() => this.toggleSwitch1()}
-                />
-              </ListItem>
-              <ListItem button onPress={() => this.toggleSwitch2()}>
-                <Body>
-                <Text style={{fontSize: 20}}>Would you like a follow up? </Text>
-                </Body>
-                <CheckBox
-                  color="red"
-                  checked={this.state.checkbox2}
-                  onPress={() => this.toggleSwitch2()}
-                />
-              </ListItem>
+        <View style={global.step}>
+          <FlatList horizontal={true} data={step} renderItem={({item}) =>
+            <View style={global.stepCircle}>
+              <Text style={global.stepText}>
+                {item<4?item:''}
+              </Text>
             </View>
+          } keyExtractor={(item, index) => index.toString()}/>
+        </View>
+          <Content padder style={global.watermarkOpacity}>
+            {/*<View>*/}
+              {/*<ListItem button onPress={() => this.toggleSwitch1()}>*/}
+                {/*<Body>*/}
+                {/*<Text style={{fontSize: 20}}>Save report details to phone</Text>*/}
+                {/*</Body>*/}
+                {/*<CheckBox*/}
+                  {/*checked={this.state.checkbox1}*/}
+                  {/*onPress={() => this.toggleSwitch1()}*/}
+                {/*/>*/}
+              {/*</ListItem>*/}
+              {/*<ListItem button onPress={() => this.toggleSwitch2()}>*/}
+                {/*<Body>*/}
+                {/*<Text style={{fontSize: 20}}>Would you like a follow up? </Text>*/}
+                {/*</Body>*/}
+                {/*<CheckBox*/}
+                  {/*color="red"*/}
+                  {/*checked={this.state.checkbox2}*/}
+                  {/*onPress={() => this.toggleSwitch2()}*/}
+                {/*/>*/}
+              {/*</ListItem>*/}
+            {/*</View>*/}
             <View style={styles.form}>
               <View style={styles.inputLine}>
-                <Text style={{fontSize: 20}}>Name:</Text>
+                <Text style={styles.label}>Name:</Text>
                 <Input style={styles.input} onChangeText={(text) => {this.setState({username:text}); }}/>
               </View>
               <View style={styles.inputLine}>
-                <Text style={{fontSize: 20}} >Email: </Text>
+                <Text style={styles.label} >Email: </Text>
                 <Input style={styles.input} onChangeText={(text) => {this.setState({email:text}); }}/>
               </View>
               <View style={styles.inputLine}>
-                <Text style={{fontSize: 20}} >Mobile#: </Text>
+                <Text style={styles.label} >Mobile#: </Text>
                 <Input style={styles.input} onChangeText={(text) => {this.setState({phone:text}); }}/>
               </View>
             </View>
-            <View style={{flex: 1, flexDirection: 'row', justifyContent: 'center',}}>
+            <View style={{flex: 1, flexDirection: 'row', justifyContent: 'center',margin:10}}>
               <TouchableOpacity activeOpacity={0.6} style={global.button} onPress={() => this.props.navigation.navigate("WebRoute",{url:"http://www.coeltx.net/",name:"EAGLE LAKE TEXAS"})} >
-                <Image style={{height: 200, flex: 1}} resizeMode="contain"
+                <Image style={{height: 150, flex: 1}} resizeMode="contain"
                        source={require('../../../assets/ui/R4.png')}/>
               </TouchableOpacity>
             </View>
-            <View style={{flex: 1, flexDirection: 'row', justifyContent: 'center',}}>
-              <TouchableOpacity activeOpacity={0.7} style={global.button} onPress={() => this.OnBtnReport()} >
-                <Image style={{width: 180, flex: 1}} resizeMode="contain" source={require('../../../assets/ui/btn/submit.png')}/>
+            <View style={{ flexDirection: 'row', justifyContent: 'center',marginTop:10}}>
+              <TouchableOpacity activeOpacity={0.5} style={global.sendBtn} onPress={() => this.OnBtnReport()} >
+                <Text style={{color:'#fff',fontSize:10,padding:8,textAlign: 'center'}}>Submit</Text>
               </TouchableOpacity>
             </View>
           </Content>

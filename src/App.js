@@ -8,6 +8,7 @@ import Home from "./container/HomeContainer";
 import SideBar from "./pages/sidebar";
 import WebView from "./pages/webpage";
 import ReportForm from "./pages/reportHome";
+import Category from "./pages/category";
 import ConfirmPage from "./pages/confirmPage";
 import SignUpPage from "./pages/signup";
 
@@ -17,6 +18,7 @@ const Drawer = DrawerNavigator(
     BlankPage: { screen: BlankPage },
     WebRoute: { screen: WebView },
     ReportRoute: { screen: ReportForm },
+    CategoryRoute: { screen: Category },
     ConfirmRoute: { screen: ConfirmPage },
     Home: { screen: Home }
 

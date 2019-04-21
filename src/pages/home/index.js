@@ -40,7 +40,7 @@ class Home extends Component {
                 <View style={styles.logoRight}>
                   <Text style={styles.reportText}>Submit Report</Text>
                   <TouchableOpacity activeOpacity={0.5} style={global.button}
-                                  onPress={() => this.props.navigation.navigate("ReportRoute")}>
+                                  onPress={() => this.props.navigation.navigate("CategoryRoute")}>
                   <Image style={styles.goArrow} resizeMode="contain" source={require('../../../assets/images/goArrow.png')}/>
                   </TouchableOpacity>
                 </View>

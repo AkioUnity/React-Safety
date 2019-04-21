@@ -1,11 +1,16 @@
+import {Dimensions} from "react-native";
+
+const h=Dimensions.get('window').height;
+const w=Dimensions.get('window').width;
+
 export default {
   container: {
     backgroundColor: "#FCE292"
   },
   form: {
-    borderRadius: 4,
+    borderRadius: 6,
     borderWidth: 1,
-    borderColor: '#1f1f25',
+    borderColor: '#a3a3c3',
     fontSize: 20
   },
   inputLine: {
@@ -13,13 +18,19 @@ export default {
     margin:10,
     justifyContent:'space-between'
   },
+  label: {
+    fontSize: 16,
+    color:'#696969',
+    padding:5,
+  },
   input: {
     backgroundColor: "#fff1f3",
     borderWidth: 1,
-    borderColor: '#000000',
+    borderColor: '#bcbcbc',
     fontSize:18,
-    width:160,
-    height: 40
+    width:w*0.6,
+    height: 40,
+    borderRadius: 10,
   },
   mb10: {
     marginBottom: 10
