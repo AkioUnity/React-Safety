@@ -43,28 +43,28 @@ const datas = [
     key: "WebRoute1",
     route: "WebRoute",
     icon: "web",
-    url: "https://www.reasaintl.com/"
+    url: "https://www.reasaintl.com/coel-communityconnections"
   },
   {
     name: "Community Bulletin Board",
     key: "WebRoute2",
     route: "WebRoute",
     icon: "web",
-    url: "https://www.reasaintl.com/"
+    url: "https://www.reasaintl.com/coel-communitybulletinboard"
   },
   {
     name: "Loyalty",
     key: "WebRoute3",
     route: "WebRoute",
     icon: "web",
-    url: "https://www.reasaintl.com/"
+    url: "https://www.reasaintl.com/coel-loyalty"
   },
   {
     name: "Barter Barn",
     route: "WebRoute",
     key: "WebRoute4",
     icon: "web",
-    url: "https://www.reasaintl.com/"
+    url: "https://www.reasaintl.com/coel-barterbarn"
   }
 ];
 

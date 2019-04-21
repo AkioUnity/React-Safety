@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SafetyApp</string>
+    <string name="facebook_app_id">2293146950899218</string>
+    <string name="fb_login_protocol_scheme">fb2293146950899218</string>
 </resources>

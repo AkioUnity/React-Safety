@@ -14,7 +14,7 @@ import {
   Footer,
   Spinner, FooterTab
 } from "native-base";
-
+import { LoginButton, AccessToken } from 'react-native-fbsdk';
 import styles from "./styles";
 
 export interface Props {
@@ -60,10 +60,30 @@ class Login extends React.Component<Props, State> {
                 </View>
               )}
             <Image square style={styles.loginImage} resizeMode="contain" source={require("../../../assets/images/login00.png")}/>
-            <View>
-            <Button full style={styles.facebookRadius} onPress={() => this.props.navigation.navigate("WebRoute")}>
-              <Text style={{fontSize:12}}>CONTINUE WITH FACEBOOK</Text>
-            </Button>
+            <View style={styles.facebookLogin}>
+            {/*<Button full style={styles.facebookRadius} onPress={() => this.props.navigation.navigate("WebRoute")}>*/}
+              {/*<Text style={{fontSize:12}}>CONTINUE WITH FACEBOOK</Text>*/}
+            {/*</Button>*/}
+              <LoginButton
+                onLoginFinished={
+                  (error, result) => {
+                    if (error) {
+                      console.log("login has error: " + result.error);
+                      console.log(result);
+                      console.log(error);
+                    } else if (result.isCancelled) {
+                      console.log("login is cancelled.");
+                    } else {
+                      AccessToken.getCurrentAccessToken().then(
+                        (data) => {
+                          console.log(data.accessToken.toString());
+                          console.log(data);
+                        }
+                      )
+                    }
+                  }
+                }
+                onLogoutFinished={() => console.log("logout.")}/>
             </View>
             <View>
               <Button transparent onPress={() => this.props.navigation.navigate("SignUpRoute")}>

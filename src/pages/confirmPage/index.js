@@ -87,9 +87,6 @@ class ConfirmPage extends Component {
           </Body>
           <Right/>
         </Header>
-
-        <ImageBackground resizeMode="contain" source={require("../../../assets/ui/Logo1.png")}
-                         style={global.watermark}>
           <Content padder style={global.watermarkOpacity}>
             <View>
               <ListItem button onPress={() => this.toggleSwitch1()}>
@@ -138,7 +135,6 @@ class ConfirmPage extends Component {
               </TouchableOpacity>
             </View>
           </Content>
-        </ImageBackground>
         <Footer>
           <FooterTab>
             <Button full large>

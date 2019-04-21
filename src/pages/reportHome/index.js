@@ -70,7 +70,7 @@ class ReportHome extends Component {
   render() {
     return (
       <Container>
-        <Header>
+        <Header style={global.reportHeader}>
           <Left>
             <Button
               transparent
@@ -80,14 +80,16 @@ class ReportHome extends Component {
             </Button>
           </Left>
           <Body>
-          <Title style={{color: '#000000',}}>Safety In Numbers</Title>
-          <Text>Voluntary Reporter</Text>
+          <Title style={{color: '#fff',}}>Case Details</Title>
           </Body>
           <Right/>
         </Header>
-
-        <ImageBackground resizeMode="contain" source={require("../../../assets/ui/Logo1.png")}
-                         style={global.watermark}>
+        <View style={{flex: 1, flexDirection: 'row'}}>
+          <Icon name="medical" style={styles.iconSize}/>
+          <Text numberOfLines={1} style={styles.reportText}>
+            {item.title}
+          </Text>
+        </View>
           <Content padder style={global.watermarkOpacity}>
             <FlatList data={datas} renderItem={({item}) =>
               <View>
@@ -118,7 +120,6 @@ class ReportHome extends Component {
               </Text>
             </View>
           </Content>
-        </ImageBackground>
         <Footer>
           <FooterTab>
             <Button full large>

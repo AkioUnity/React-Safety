@@ -1,9 +1,16 @@
-import { StyleSheet } from "react-native";
+import { Dimensions,StyleSheet } from "react-native";
+const h=Dimensions.get('window').height;
+const w=Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
   loginHeader: {
     height: 100,
     backgroundColor: "#ECECEC"
+  },
+  reportHeader: {
+    height: h*0.18,
+    backgroundColor: "#21428B",
+    paddingBottom: h*0.08
   },
   alignCenter: {
     alignItems: "center"

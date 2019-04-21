@@ -27,7 +27,7 @@ const styles: any = StyleSheet.create({
     marginBottom:h*0.02,
     marginLeft:0,
     padding:h*0.02,
-    fontSize: 12
+    fontSize: 12,
   },
   logoImage:{
     width: h*0.1*0.5,
@@ -60,6 +60,9 @@ const styles: any = StyleSheet.create({
     width:width,
     height:40,
     borderRadius: 20,
+    marginBottom:h*0.04
+  },
+  facebookLogin:{
     marginBottom:h*0.04
   },
 });

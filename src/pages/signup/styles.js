@@ -1,7 +1,8 @@
 import { Dimensions, StyleSheet } from "react-native";
 
-const deviceHeight = Dimensions.get("window").height;
-const width=350;
+const h = Dimensions.get("window").height;
+const w = Dimensions.get("window").width;
+const width=w*0.8;
 const styles: any = StyleSheet.create({
   container: {
     position: "absolute",
@@ -15,37 +16,14 @@ const styles: any = StyleSheet.create({
     color: '#000'
   },
   input:{
-    color: '#564240',
-    borderBottomColor:'#564240'
-  },
-  whiteCircle:{
-    backgroundColor: '#fff',
-    width:110,
-    height:110,
-    borderRadius: 55,
-    margin:30,
+    color: '#756c73',
+    fontSize:h*0.017
   },
   inputRadius:{
-    backgroundColor: '#fff',
     width:width,
-    height:45,
-    borderRadius: 21,
-    marginBottom:20,
-    marginLeft:0,
-    padding:20,
-    fontSize: 12
-  },
-  logoImage:{
-    width: 65,
-    height:65,
-    margin:22
-  },
-  loginRadius:{
-    backgroundColor: '#173885',
-    width:width,
-    height:40,
-    borderRadius: 20,
-    margin:30,
+    marginBottom:h*0.020,
+    marginLeft:w*0.01,
+    borderColor:'#aa8d89',
   },
   loginText:{
     fontSize: 22, color: '#000',
@@ -66,7 +44,8 @@ const styles: any = StyleSheet.create({
     width:width,
     height:50,
     borderRadius: 25,
-    marginBottom:30,
+    marginBottom:h*0.030,
+    marginTop:h*0.030,
     alignSelf:'center'
   },
 });
