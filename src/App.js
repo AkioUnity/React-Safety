@@ -10,6 +10,7 @@ import WebView from "./pages/webpage";
 import ReportForm from "./pages/reportHome";
 import Category from "./pages/category";
 import ConfirmPage from "./pages/confirmPage";
+import ThankyouPage from "./pages/thankyou";
 import SignUpPage from "./pages/signup";
 
 const Drawer = DrawerNavigator(
@@ -20,6 +21,7 @@ const Drawer = DrawerNavigator(
     ReportRoute: { screen: ReportForm },
     CategoryRoute: { screen: Category },
     ConfirmRoute: { screen: ConfirmPage },
+    ThankyouRoute: { screen: ThankyouPage },
     Home: { screen: Home }
 
   },
