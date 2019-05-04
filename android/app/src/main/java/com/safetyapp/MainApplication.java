@@ -3,6 +3,8 @@ package com.SafetyApp;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.imagepicker.ImagePickerPackage;
+import org.reactnative.camera.RNCameraPackage;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookSdk;
 import com.facebook.reactnative.androidsdk.FBSDKPackage;
@@ -14,6 +16,8 @@ import com.facebook.soloader.SoLoader;
 
 import java.util.Arrays;
 import java.util.List;
+
+import com.agontuk.RNFusedLocation.RNFusedLocationPackage;
 
 
 public class MainApplication extends Application implements ReactApplication {
@@ -34,8 +38,11 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new ImagePickerPackage(),
+            new RNCameraPackage(),
             new FBSDKPackage(mCallbackManager),
-          new RNCWebViewPackage()
+          new RNCWebViewPackage(),
+              new RNFusedLocationPackage()
       );
     }
 

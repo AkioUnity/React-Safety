@@ -19,6 +19,7 @@ import global from "../../global/styles";
 import {bindActionCreators} from "redux";
 import * as Actions from "../../actions/user";
 import {connect} from "react-redux";
+import AdFooter from "../base";
 
 const step = [ 1,2,3,4];
 
@@ -104,13 +105,7 @@ class ConfirmPage extends Component {
             </View>
             </View>
           </Content>
-        <Footer>
-          <FooterTab>
-            <Button full large>
-              <Text>Your AD Here</Text>
-            </Button>
-          </FooterTab>
-        </Footer>
+        <AdFooter/>
       </Container>
     );
   }

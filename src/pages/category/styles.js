@@ -65,6 +65,7 @@ export default {
     marginVertical:h*0.015,
     borderRadius:16,
     flex: 1, flexDirection: 'row', alignItems: 'stretch',
+    // justifyContent:'center'
   },
   area0: {
     width:w*0.88,
@@ -72,12 +73,16 @@ export default {
     borderRadius:16,
   },
   textArea: {
-    fontSize: w*0.05,
-    width:w*0.7,
+    fontSize: w*0.03,
+    width:w*0.81,
     height:w*0.15,
     backgroundColor: 'white',
     left:-w*0.033 ,
     color:'#636363',
-    padding:w*0.04,
+    paddingTop:w*0.04,
+    paddingLeft:w*0.03,
+    // justifyContent:'center',
+    // alignItems:'center',
+    // alignSelf:'center'
   },
 };

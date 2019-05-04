@@ -27,10 +27,13 @@ export default {
     backgroundColor: "#fff1f3",
     borderWidth: 1,
     borderColor: '#bcbcbc',
-    fontSize:18,
+    fontSize:w*0.035,
     width:w*0.6,
-    height: 40,
+    height: w*0.09,
     borderRadius: 10,
+    padding:w*0.01,
+    // paddingTop:w*0.013,
+    paddingLeft:w*0.02,
   },
   mb10: {
     marginBottom: 10

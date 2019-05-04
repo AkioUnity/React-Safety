@@ -11,7 +11,7 @@ import {
   Footer,
   Spinner, FooterTab, Label, Input, Item, Form
 } from "native-base";
-
+import AdFooter from "../base";
 import styles from "./styles";
 import loginStyles from "../login/styles";
 
@@ -58,13 +58,7 @@ class SignUp extends Component {
               </View>
             </View>
         </Content>
-        <Footer>
-          <FooterTab>
-            <Button full large>
-              <Text>Your AD Here</Text>
-            </Button>
-          </FooterTab>
-        </Footer>
+        <AdFooter/>
       </Container>
   );
   }

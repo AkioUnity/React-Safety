@@ -16,6 +16,7 @@ import {
 } from "native-base";
 import { LoginButton, AccessToken } from 'react-native-fbsdk';
 import styles from "./styles";
+import AdFooter from "../base";
 
 export interface Props {
   loginForm: any;
@@ -92,13 +93,7 @@ class Login extends React.Component<Props, State> {
             </View>
           </View>
         </Content>
-        <Footer>
-          <FooterTab>
-            <Button full large>
-              <Text>Your AD Here</Text>
-            </Button>
-          </FooterTab>
-        </Footer>
+        <AdFooter/>
       </Container>
     );
   }

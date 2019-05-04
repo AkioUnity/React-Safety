@@ -3,6 +3,20 @@ const h=Dimensions.get('window').height;
 const w=Dimensions.get('window').width;
 
 export default {
+  preview: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
+  capture: {
+    flex: 0,
+    backgroundColor: '#fff',
+    borderRadius: 5,
+    padding: 15,
+    paddingHorizontal: 20,
+    alignSelf: 'center',
+    margin: 20,
+  },
   container: {
     backgroundColor: "#B0DAE6"
   },
@@ -17,6 +31,8 @@ export default {
   btns: {
     alignItems:'center',
     marginBottom: 10,
+    flex:1,
+    flexDirection: 'row'
   },
   itemBtn: {
     width:w*0.32,

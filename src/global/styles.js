@@ -91,7 +91,8 @@ const styles = StyleSheet.create({
     width:w*0.28,
     height:w*0.08,
     borderRadius:w*0.04,
-    backgroundColor:'#ED882B'
+    backgroundColor:'#ED882B',
+    justifyContent: 'center'
   },
 
 });

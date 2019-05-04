@@ -19,26 +19,27 @@ import global from "../../global/styles";
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
 import * as Actions from "../../actions/user";
+import AdFooter from "../base";
 
 const datas = [
   {
-    key: "Issues with bus taxi, or",
+    key: "Right of Way Maintenance/Safety",
     color: "#F09FA0",
   },
   {
-    key: "Building management and",
+    key: "Facility Maintenance/Safety",
     color: "#7AC0C8",
   },
   {
-    key: "Issues with bus taxi, or other",
+    key: "Public Safety Concerns",
     color: "#97D6A1"
   },
   {
-    key: "Adding repainting or",
+    key: "Signage & Lighting Maintenance/Safety",
     color: "#DC9DF6",
   },
   {
-    key: "Parks,greens and facilities",
+    key: "Parks & Recreational Maintenance/Safety",
     color: "#B5B4F0",
   },
 ];
@@ -123,13 +124,7 @@ class Category extends Component {
             />
 
           </Content>
-        <Footer>
-          <FooterTab>
-            <Button full large>
-              <Text>Your AD Here</Text>
-            </Button>
-          </FooterTab>
-        </Footer>
+        <AdFooter/>
       </Container>
     );
   }

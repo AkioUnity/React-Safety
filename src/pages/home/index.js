@@ -16,6 +16,7 @@ import {
 import styles from "./styles";
 import global from "../../global/styles";
 import {Image, ImageBackground, TouchableOpacity, View,Linking} from "react-native";
+import AdFooter from "../base";
 const logoImage = require("../../../assets/images/logo0.png");
 class Home extends Component {
   render() {
@@ -53,7 +54,7 @@ class Home extends Component {
 
             <Text style={styles.specText}>* If you choose to report "Anonymously", you will not have the option for follow up status communications on items you report. For those wishing status updates, please login with your Facebook or Google accounts or create an account and choose to receive status updates when filling out your report.</Text>
 
-            <Text style={styles.specText}>* We will not be able to process cases that fail to provide relative details, or reports that contain irrational emotional reports, verbal abuse, foul language, or reproduction of news</Text>
+            <Text style={styles.specText}>* We will not be able to process cases that fail to provide relevant details, or reports that contain irrational emotional reports, verbal abuse, foul language, or reproduction of news</Text>
 
             <Text style={styles.specText}>* Please provide accurate information to aid the city’s efficiency. Please do not repeatedly file a report without new facts or causes.</Text>
             <Text style={styles.specText}>* If you receive a satisfaction survey after using SiN, Please respond to help us improve our product and services.</Text>
@@ -78,13 +79,7 @@ class Home extends Component {
             </View>
           </Content>
         {/*</ImageBackground>*/}
-        <Footer>
-          <FooterTab>
-            <Button full>
-              <Text>Your AD Here</Text>
-            </Button>
-          </FooterTab>
-        </Footer>
+        <AdFooter/>
       </Container>
     );
   }
